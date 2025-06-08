@@ -19,8 +19,7 @@ A lightweight, customizable **week-view calendar** JavaScript plugin that allows
 
 ## Demo
 
-![Demo Screenshot](./screenshot.png)  
-*(Include a screenshot or gif showing the calendar in action)*
+[Demo](https://schedule-slot-picker.vercel.app/)
 
 ---
 
@@ -114,3 +113,4 @@ MIT License — free to use and modify.
 Jerald Tonmoy Dias  
 *Frontend Developer & Fullstack Enthusiast*  
 [GitHub](https://github.com/Jerald-tonmoy-dias) | [LinkedIn](https://linkedin.com/in/jerald-tonmoy-dias)
+
