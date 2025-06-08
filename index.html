@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Slot Picker</title>
+
+    <link rel="stylesheet" href="schedule-slot-picker.css" />
+  </head>
+  <body>
+    <div class="lg-calender mb-40">
+      <div class="calender-header mb-20">
+        <div>
+          <h6 class="schedule-txt">Schedule</h6>
+          <p class="schedule-des">Please select your time slots</p>
+        </div>
+
+        <div class="nav">
+          <h2 id="weekLabel"></h2>
+          <button id="changeweekprev" type="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M8.6002 9.88079L13.1902 5.29079C13.3776 5.10454 13.631 5 13.8952 5C14.1594 5 14.4128 5.10454 14.6002 5.29079C14.6939 5.38376 14.7683 5.49436 14.8191 5.61622C14.8699 5.73808 14.896 5.86878 14.896 6.00079C14.896 6.1328 14.8699 6.26351 14.8191 6.38537C14.7683 6.50723 14.6939 6.61783 14.6002 6.71079L10.0002 11.2908C9.90647 11.3838 9.83207 11.4944 9.78131 11.6162C9.73054 11.7381 9.7044 11.8688 9.7044 12.0008C9.7044 12.1328 9.73054 12.2635 9.78131 12.3854C9.83207 12.5072 9.90647 12.6178 10.0002 12.7108L14.6002 17.2908C14.7885 17.4778 14.8948 17.7319 14.8958 17.9973C14.8967 18.2626 14.7922 18.5175 14.6052 18.7058C14.4182 18.8941 14.1641 19.0004 13.8987 19.0014C13.6334 19.0023 13.3785 18.8978 13.1902 18.7108L8.6002 14.1208C8.03839 13.5583 7.72284 12.7958 7.72284 12.0008C7.72284 11.2058 8.03839 10.4433 8.6002 9.88079Z"
+                fill="#374957"
+              />
+            </svg>
+          </button>
+          <button id="changeweeknext" type="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M15.3998 9.88079L10.8098 5.29079C10.6224 5.10454 10.369 5 10.1048 5C9.84062 5 9.58716 5.10454 9.3998 5.29079C9.30607 5.38376 9.23168 5.49436 9.18091 5.61622C9.13014 5.73808 9.104 5.86878 9.104 6.00079C9.104 6.1328 9.13014 6.26351 9.18091 6.38537C9.23168 6.50723 9.30607 6.61783 9.3998 6.71079L13.9998 11.2908C14.0935 11.3838 14.1679 11.4944 14.2187 11.6162C14.2695 11.7381 14.2956 11.8688 14.2956 12.0008C14.2956 12.1328 14.2695 12.2635 14.2187 12.3854C14.1679 12.5072 14.0935 12.6178 13.9998 12.7108L9.3998 17.2908C9.2115 17.4778 9.10518 17.7319 9.10425 17.9973C9.10331 18.2626 9.20783 18.5175 9.3948 18.7058C9.58178 18.8941 9.8359 19.0004 10.1013 19.0014C10.3666 19.0023 10.6215 18.8978 10.8098 18.7108L15.3998 14.1208C15.9616 13.5583 16.2772 12.7958 16.2772 12.0008C16.2772 11.2058 15.9616 10.4433 15.3998 9.88079Z"
+                fill="#374957"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="calendar"
+        class="calendar"
+        accordion
+        data-booked-slots='{
+                        "2025-04-21": [6, 10, 18],
+                        "2025-04-22": [1, 10, 15],
+                        "2025-04-23": [4, 10, 15, 21],
+                        "2025-04-24": [6, 9, 12, 17],
+                        "2025-04-25": [1, 6, 10, 18],
+                        "2025-04-26": [6],
+                        "2025-04-27": [6, 10]
+                    }'
+      ></div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h3 class="mb-24">
+            Click on the request to send a message to the tutor to book a lesson
+            at the selected time
+          </h3>
+          <p class="mb-16" id="modalSlotInfo"></p>
+
+          <a href="#" class="primary-btn lg border-radius-8 mb-16">Request</a>
+
+          <span id="closeModal" class="close dark-btn lg border-radius-8"
+            >Cancel</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="schedule-slot-picker.js"></script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --heading-font: "Raleway", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+}
+
+.primary-btn,
+.dark-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-family: var(--body-font);
+  font-style: normal;
+  font-weight: 400;
+  text-transform: capitalize;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  padding: 12px 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.dark-btn {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.lg-calender {
+  padding: 24px;
+  border: 1px solid #cccfd1;
+  border-radius: 12px;
+}
+
+.lg-calender .calender-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lg-calender .schedule-txt {
+  color: #000d1a;
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.lg-calender .schedule-des {
+  color: #4d565f;
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%;
+}
+
+.lg-calender .nav {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lg-calender #weekLabel {
+  color: #000000;
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.lg-calender .nav button {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  border: 1px solid #e5e7e8;
+  background: #ffffff;
+}
+
+.lg-calender .calendar {
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr);
+  border: 1px solid #ffffff;
+  background: #f2f3f4;
+  overflow: auto;
+}
+
+.lg-calender .cell,
+.lg-calender .time-label {
+  border: 1px solid #ffffff;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.lg-calender .time-label {
+  background: #f2f3f4;
+  color: #000d1a;
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.lg-calender .header {
+  background: #f2f3f4;
+  font-weight: bold;
+}
+
+.lg-calender .header .day,
+.lg-calender .header .date-txt {
+  color: #000d1a;
+  text-align: center;
+  font-family: var(--body-font);
+  font-style: normal;
+  line-height: 120%;
+}
+
+.lg-calender .header .day {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.lg-calender .header .date-txt {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.lg-calender .booked {
+  background-color: #007bff;
+  color: white;
+  cursor: default;
+}
+
+.lg-calender .available {
+  background-color: #f2f3f4;
+  cursor: pointer;
+  position: relative;
+}
+
+.lg-calender .past {
+  background-color: #e0e0e0;
+  color: #999999;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.lg-calender .available:hover::after,
+.lg-calender .booked:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.lg-calender .available:hover::before {
+  content: "Request";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #007bff;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.lg-calender .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.lg-calender .modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.lg-calender .close {
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
